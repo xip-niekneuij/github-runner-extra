@@ -1,0 +1,38 @@
+name: github-runner-extra
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+      - cron: '6 6 6 * *'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+
+    - name: 💿 Setup Docker (1/2)
+      uses: docker/setup-qemu-action@v3
+      with:
+        platforms: linux/amd64
+    - name: 💿 Setup Docker (2/2)
+      uses: docker/setup-buildx-action@v3
+
+    - name: 👤 Login Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: 🚀 Push github-runner-extra
+      uses: docker/build-push-action@v6
+      with:
+        platforms: linux/amd64,linux/arm64
+        push: true
+        tags: xipniekneuij/github-runner-extra:latest
