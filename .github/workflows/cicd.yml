@@ -22,8 +22,6 @@ jobs:
 
     - name: 💿 Setup Docker (1/2)
       uses: docker/setup-qemu-action@v3
-      with:
-        platforms: linux/amd64
     - name: 💿 Setup Docker (2/2)
       uses: docker/setup-buildx-action@v3
 
