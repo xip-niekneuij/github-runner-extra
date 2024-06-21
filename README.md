@@ -1,10 +1,15 @@
 # github-runner-extra
 
-It's myoung34/github-runner, but also [AWS, Git Crypt, Helm, Kubernetes, Terraform] is installed.
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/repository/docker/xipniekneuij/github-runner-extra)
+
+[![github-runner-extra](https://github.com/xip-niekneuij/github-runner-extra/actions/workflows/cicd.yml/badge.svg)](https://github.com/xip-niekneuij/github-runner-extra/actions/workflows/cicd.yml)
+
+[myoung34/github-runner](https://github.com/myoung34/docker-github-actions-runner)
++
+[AWS, Git Crypt, Helm, Kubernetes, Terraform]
 
 ## Building flow
 
-The versions in use is whatever the operating system or vendor choose to use at this time.
+The versions in use are whatever the operating system or vendor choose to use at this time.
 
-Every month, the Dockerfile is build and pushed automatically to the `latest` tag.
-So don't use this on stuff that seen a last update five years ago or something, it's probably going to get buggy.
+Every month, the Dockerfile is built and pushed automatically to the `latest` tag.
